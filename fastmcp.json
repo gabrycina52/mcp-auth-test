@@ -1,0 +1,23 @@
+{
+  "name": "emu-mcp",
+  "version": "0.1.0",
+  "description": "EMU MCP Server with mock tools for testing",
+  "transport": {
+    "type": "http",
+    "port": 8000
+  },
+  "oauth": {
+    "enabled": true,
+    "provider": "azure",
+    "client_id": "${OAUTH_CLIENT_ID}",
+    "client_secret": "${OAUTH_CLIENT_SECRET}",
+    "tenant_id": "${OAUTH_TENANT_ID}",
+    "scopes": ["mcp:read", "mcp:write"],
+    "redirect_uri": "http://localhost:8000/oauth/callback"
+  },
+  "environment": {
+    "OAUTH_CLIENT_ID": "test-client-id",
+    "OAUTH_CLIENT_SECRET": "test-client-secret",
+    "OAUTH_TENANT_ID": "test-tenant-id"
+  }
+}
